@@ -40,7 +40,6 @@ namespace KillProcess
 
         private void btnKillProcess_Click(object sender, EventArgs e)
         {
-
             try
             {
                 var ps = Process.GetProcessesByName(lvProcessList.SelectedItems[0].Text);

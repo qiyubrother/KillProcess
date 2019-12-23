@@ -36,13 +36,17 @@ namespace KillProcess
                     lvProcessList.Items.Add(p.ProcessName);
                 }
             }
+            if (lvProcessList.Items.Count > 0)
+            {
+                lvProcessList.Items[0].Selected = true;
+            }
         }
 
         private void btnKillProcess_Click(object sender, EventArgs e)
         {
             try
             {
-                var ps = Process.GetProcessesByName(lvProcessList.SelectedItems[0].Text);
+                var ps = Process.GetProcessesByName(txtKey.Text);
                 foreach(var p in ps)
                 {
                     p.Kill();
@@ -60,7 +64,7 @@ namespace KillProcess
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnKillProcess.PerformClick();
+                btnSearch.PerformClick();
             }
         }
     }

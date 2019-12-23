@@ -46,7 +46,7 @@ namespace KillProcess
         {
             try
             {
-                var ps = Process.GetProcessesByName(txtKey.Text);
+                var ps = Process.GetProcessesByName(lvProcessList.SelectedItems[0].Text);
                 foreach(var p in ps)
                 {
                     p.Kill();
